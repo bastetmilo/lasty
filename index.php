@@ -14,7 +14,7 @@ if (isset($_POST['send'])){
 	}        
 	//Sprawdzam czy wgrywam plik jpg. 
 	//Jak to zmienić, żeby warunek obejmował png i gif? 
-	if ($_FILES['last_file']['type'] != 'image/jpeg')
+	if ( !($_FILES['last_file']['type'] == 'image/jpeg' || $_FILES['last_file']['type'] == 'image/png') )  
 	{
 		echo 'Zły typ pliku: '.$_FILES['last_file']['type'];
 		exit;
